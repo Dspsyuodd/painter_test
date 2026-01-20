@@ -61,3 +61,5 @@ flutter_icons:
   android: true
   ios: true
   image_path: "assets/images/logo.png" 
+  background_color_ios: "#000000"
+  remove_alpha_ios: true
