@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "611691594900",
+    "project_id": "neo-canvas-bb38f",
+    "storage_bucket": "neo-canvas-bb38f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611691594900:android:96550d39cea17be5236081",
+        "android_client_info": {
+          "package_name": "com.example.neo_canvas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAylKk8ccFWP3gNei4YMSFWE7Z0nvUDS-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611691594900:android:172430fb85c98733236081",
+        "android_client_info": {
+          "package_name": "com.neocanva.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAylKk8ccFWP3gNei4YMSFWE7Z0nvUDS-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
