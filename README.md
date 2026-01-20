@@ -6,6 +6,7 @@ state - state_notifier
 
 навигация - go_router
 
+-------------------
 
 data - репозитории
 
