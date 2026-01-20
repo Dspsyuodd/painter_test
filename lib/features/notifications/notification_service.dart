@@ -55,7 +55,7 @@ class NotificationService {
       'uploads',
       'Загрузки',
     );
-    
+
     const iosDetails = DarwinNotificationDetails(
       presentAlert: true,
       presentSound: true,

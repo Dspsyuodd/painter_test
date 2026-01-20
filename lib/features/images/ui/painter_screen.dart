@@ -20,7 +20,7 @@ class PainterScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: NeoAppbar(
-        title: 'Новое изображение',
+        title: initialImage == null ? 'Новое изображение' : 'Редактирование',
         leading: InkWell(
           onTap: viewModel.onBackTap,
           child: const Icon(
