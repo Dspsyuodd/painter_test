@@ -54,11 +54,13 @@ class _AuthScreen extends StatelessWidget {
                   hint: 'Введите электронную почту',
                   label: 'e-mail',
                   controller: viewModel.emailController,
+                  focusNode: viewModel.emailFocusNode,
                 ),
                 NeoTextField(
                   hint: 'Введите пароль',
                   label: 'Пароль',
                   controller: viewModel.passwordController,
+                  focusNode: viewModel.passwordFocusNode,
                   obscureText: true,
                 ),
                 AppErrorContainer(

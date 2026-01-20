@@ -5,6 +5,7 @@ class NeoTextField extends StatelessWidget {
   final String hint;
   final TextEditingController? controller;
   final bool obscureText;
+  final FocusNode? focusNode;
 
   const NeoTextField({
     required this.hint,
@@ -12,6 +13,7 @@ class NeoTextField extends StatelessWidget {
     super.key,
     this.controller,
     this.obscureText = false,
+    this.focusNode,
   });
 
   @override
@@ -45,6 +47,7 @@ class NeoTextField extends StatelessWidget {
         children: [
           Text(label, style: const TextStyle(color: Colors.grey)),
           TextFormField(
+            focusNode: focusNode,
             obscureText: obscureText,
             cursorColor: Colors.white,
             decoration: InputDecoration(

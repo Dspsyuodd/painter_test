@@ -33,6 +33,7 @@ class _RegistrationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isKeyboardVisible = MediaQuery.of(context).viewInsets.vertical > 0;
     final error = state.errorMessage;
     return Scaffold(
       body: Stack(
@@ -45,34 +46,44 @@ class _RegistrationScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 20,
               children: [
-                GradientShadowText(
-                  'Регистрация',
-                  style: Theme.of(context).textTheme.headlineLarge,
+                Visibility(
+                  visible: !isKeyboardVisible,
+                  child: GradientShadowText(
+                    'Регистрация',
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
                 ),
                 NeoTextField(
                   hint: 'Введите ваше имя',
                   label: 'Имя',
                   controller: viewModel.nameController,
+                  focusNode: viewModel.nameFocusNode,
                 ),
                 NeoTextField(
                   hint: 'Ваша электронная почта',
                   label: 'e-mail',
                   controller: viewModel.emailController,
+                  focusNode: viewModel.emailFocusNode,
                 ),
-                Divider(
-                  thickness: 0.5,
-                  color: Colors.grey.shade800,
+                Visibility(
+                  visible: !isKeyboardVisible,
+                  child: Divider(
+                    thickness: 0.5,
+                    color: Colors.grey.shade800,
+                  ),
                 ),
                 NeoTextField(
                   hint: '8-16 символов',
                   label: 'Пароль',
                   controller: viewModel.passwordController,
+                  focusNode: viewModel.passwordFocusNode,
                   obscureText: true,
                 ),
                 NeoTextField(
                   hint: '8-16 символов',
                   label: 'Подтверждение пароля',
                   controller: viewModel.confirmPasswordController,
+                  focusNode: viewModel.confirmPasswordFocusNode,
                   obscureText: true,
                 ),
                 AppErrorContainer(
