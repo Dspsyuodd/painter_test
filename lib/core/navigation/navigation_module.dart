@@ -21,14 +21,18 @@ class NavigationModule {
   }
 
   void painter({File? initialImage}) {
-    _goRouter.go('/painter', extra: initialImage);
+    _goRouter.push('/painter', extra: initialImage);
   }
 
   void registration() {
-    _goRouter.go('/registration');
+    _goRouter.push('/registration');
   }
 
   void splash() {
     _goRouter.go('/splash');
+  }
+
+  void back() {
+    _goRouter.pop();
   }
 }

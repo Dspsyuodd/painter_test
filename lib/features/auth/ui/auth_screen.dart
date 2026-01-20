@@ -5,8 +5,8 @@ import 'package:neo_canvas/core/ui/widgets/app_error_container.dart';
 import 'package:neo_canvas/core/ui/widgets/gradiend_shadow_text.dart';
 import 'package:neo_canvas/core/ui/widgets/neo_buttons.dart';
 import 'package:neo_canvas/core/ui/widgets/neo_text_field.dart';
-import 'package:neo_canvas/features/auth/models/auth_state.dart';
 import 'package:neo_canvas/features/auth/domain/view_models/login_view_model.dart';
+import 'package:neo_canvas/features/auth/models/auth_state.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});

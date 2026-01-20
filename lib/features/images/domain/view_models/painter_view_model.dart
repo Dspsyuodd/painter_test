@@ -20,6 +20,6 @@ class PainterViewModel extends StateNotifier<PainterState> {
   }
 
   void onBackTap() {
-    _navi.main();
+    _navi.back();
   }
 }

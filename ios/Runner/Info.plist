@@ -49,5 +49,12 @@
 		<key>NSPhotoLibraryUsageDescription</key>
 		<key>UIStatusBarHidden</key>
 		<false/>
+		<key>UIBackgroundModes</key>
+		<array>
+    		<string>remote-notification</string>
+		</array>
+
+		<key>NSUserNotificationUsageDescription</key>
+		<string>Описание</string>
 	</dict>
 </plist>

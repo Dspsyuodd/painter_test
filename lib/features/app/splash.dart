@@ -26,7 +26,10 @@ class _SplashState extends State<Splash> {
         alignment: Alignment.center,
         children: [
           const AppBackground(),
-          SvgPicture.asset('assets/svg/launch.svg', width: 200,),
+          SvgPicture.asset(
+            'assets/svg/launch.svg',
+            width: 200,
+          ),
         ],
       ),
     );

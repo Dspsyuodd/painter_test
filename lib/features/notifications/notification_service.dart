@@ -7,8 +7,6 @@ class NotificationService {
   final _uploadChannel = const AndroidNotificationChannel(
     'uploads',
     'Загрузки',
-    description: 'Уведомления о загрузке изображений',
-    importance: Importance.high,
   );
 
   Future<void> init() async {
@@ -56,11 +54,13 @@ class NotificationService {
     const androidDetails = AndroidNotificationDetails(
       'uploads',
       'Загрузки',
-      importance: Importance.high,
-      priority: Priority.high,
     );
-
-    const iosDetails = DarwinNotificationDetails();
+    
+    const iosDetails = DarwinNotificationDetails(
+      presentAlert: true,
+      presentSound: true,
+      presentBadge: true,
+    );
 
     const details = NotificationDetails(
       android: androidDetails,

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
@@ -39,9 +40,11 @@ class AppRouterFactory {
         ),
         GoRoute(
           path: AppRoutes.painter.path,
-          builder: (context, state) {
+          pageBuilder: (context, state) {
             final initialImage = state.extra as File?;
-            return PainterScreen(initialImage: initialImage);
+            return CupertinoPage(
+              child: PainterScreen(initialImage: initialImage),
+            );
           },
         ),
       ],
