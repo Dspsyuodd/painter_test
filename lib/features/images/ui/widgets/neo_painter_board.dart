@@ -45,9 +45,20 @@ class _NeoPainterBoardState extends State<NeoPainterBoard> {
           spacing: 12,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            ToolButton(
-              iconPath: 'assets/svg/Download.svg',
-              onTap: _shareImage,
+            Builder(
+              builder: (shareContext) {
+                return ToolButton(
+                  iconPath: 'assets/svg/Download.svg',
+                  onTap: () {
+                    final box = shareContext.findRenderObject() as RenderBox?;
+                    Rect? origin;
+                    if (box != null) {
+                      origin = box.localToGlobal(Offset.zero) & box.size;
+                    }
+                    _shareImage(origin);
+                  },
+                );
+              },
             ),
             ToolButton(
               iconPath: 'assets/svg/Gallery Round.svg',
@@ -212,12 +223,14 @@ class _NeoPainterBoardState extends State<NeoPainterBoard> {
     return null;
   }
 
-  Future<void> _shareImage() async {
+  Future<void> _shareImage(Rect? sharePositionOrigin) async {
     final file = await _getPainterFile();
     if (file == null) return;
+
     final params = ShareParams(
       previewThumbnail: XFile(file.path),
       files: [XFile(file.path)],
+      sharePositionOrigin: sharePositionOrigin,
     );
     await SharePlus.instance.share(params);
   }
@@ -240,9 +253,5 @@ class NeoPainterController {
 
   Future<File?> saveImage() async {
     return await _state?._saveImage();
-  }
-
-  Future<void> shareImage() async {
-    await _state?._shareImage();
   }
 }
