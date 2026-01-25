@@ -17,6 +17,7 @@ class PainterViewModel extends StateNotifier<PainterState> {
     final file = await controller.saveImage();
     if (file == null) return;
     await _imagesController.saveImage(file);
+    _navi.back();
   }
 
   void onBackTap() {
