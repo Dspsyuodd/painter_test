@@ -6,6 +6,7 @@ extension UserX on User {
     return AppUser(
       id: uid,
       email: email ?? '',
+      name: displayName ?? '',
     );
   }
 }

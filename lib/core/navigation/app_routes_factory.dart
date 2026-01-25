@@ -9,6 +9,7 @@ import 'package:neo_canvas/features/app/splash.dart';
 import 'package:neo_canvas/features/auth/domain/user_provider.dart';
 import 'package:neo_canvas/features/auth/ui/auth_screen.dart';
 import 'package:neo_canvas/features/auth/ui/registration_screen.dart';
+import 'package:neo_canvas/features/images/images_scope.dart';
 import 'package:neo_canvas/features/images/ui/gallery_screen.dart';
 import 'package:neo_canvas/features/images/ui/painter_screen.dart';
 import 'app_routes.dart';
@@ -34,18 +35,23 @@ class AppRouterFactory {
           builder: (context, state) => const RegistrationScreen(),
           redirect: _redirectIfAuthorized,
         ),
-        GoRoute(
-          path: AppRoutes.main.path,
-          builder: (context, state) => const GalleryScreen(),
-        ),
-        GoRoute(
-          path: AppRoutes.painter.path,
-          pageBuilder: (context, state) {
-            final initialImage = state.extra as File?;
-            return CupertinoPage(
-              child: PainterScreen(initialImage: initialImage),
-            );
-          },
+        ShellRoute(
+          builder: (context, state, child) => ImagesScope(child: child),
+          routes: [
+            GoRoute(
+              path: AppRoutes.main.path,
+              builder: (context, state) => const GalleryScreen(),
+            ),
+            GoRoute(
+              path: AppRoutes.painter.path,
+              pageBuilder: (context, state) {
+                final initialImage = state.extra as File?;
+                return CupertinoPage(
+                  child: PainterScreen(initialImage: initialImage),
+                );
+              },
+            ),
+          ],
         ),
       ],
     );

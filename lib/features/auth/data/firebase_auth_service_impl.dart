@@ -32,11 +32,13 @@ class FirebaseAuthServiceImpl implements AuthService {
   @override
   Future<AppUser> register(UserRegisterRequest request) async {
     try {
-      final response = await _firebaseAuth.createUserWithEmailAndPassword(
+      final credentials = await _firebaseAuth.createUserWithEmailAndPassword(
         email: request.email,
         password: request.password,
       );
-      final user = response.user;
+      await credentials.user?.updateDisplayName(request.name);
+      await credentials.user?.reload();
+      final user = credentials.user;
       if (user != null) {
         return user.toAppUser();
       } else {

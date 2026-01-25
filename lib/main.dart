@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:neo_canvas/core/di/di.dart';
 import 'package:neo_canvas/core/navigation/navigation_module.dart';
 import 'package:neo_canvas/core/ui/theme.dart';
+import 'package:neo_canvas/features/auth/auth_scope.dart';
 import 'package:neo_canvas/firebase_options.dart';
 
 void main() async {
@@ -16,7 +17,8 @@ void main() async {
     ),
   );
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  initDependencies();
+  initCore();
+  initAuth();
   runApp(const MyApp());
 }
 

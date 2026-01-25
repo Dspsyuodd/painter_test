@@ -45,16 +45,22 @@
 		<true/>
 		<key>UIApplicationSupportsIndirectInputEvents</key>
 		<true/>
-		<key>NSPhotoLibraryAddUsageDescription</key>
+
 		<key>NSPhotoLibraryUsageDescription</key>
+		<string>Нужно для загрузки фото из галереи</string>
+		<key>NSPhotoLibraryAddUsageDescription</key>
+		<string>Нужно для сохранения изображения в галерею</string>
+		<key>NSCameraUsageDescription</key>
+		<string>Разрешение не используется в приложении, но требуется библиотекой</string>
+		<key>NSMicrophoneUsageDescription</key>
+		<string>Разрешение не используется в приложении, но требуется библиотекой</string>
+		
+
 		<key>UIStatusBarHidden</key>
 		<false/>
 		<key>UIBackgroundModes</key>
 		<array>
     		<string>remote-notification</string>
 		</array>
-
-		<key>NSUserNotificationUsageDescription</key>
-		<string>Описание</string>
 	</dict>
 </plist>
