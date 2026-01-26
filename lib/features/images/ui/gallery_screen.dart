@@ -5,9 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:neo_canvas/core/di/di.dart';
 import 'package:neo_canvas/core/navigation/navigation_module.dart';
-import 'package:neo_canvas/core/ui/widgets/app_background.dart';
 import 'package:neo_canvas/core/ui/widgets/neo_appbar.dart';
 import 'package:neo_canvas/core/ui/widgets/neo_buttons.dart';
+import 'package:neo_canvas/features/app/app_scaffold.dart';
 import 'package:neo_canvas/features/images/domain/view_models/gallery_view_model.dart';
 import 'package:neo_canvas/features/images/models/gallery_state.dart';
 
@@ -38,7 +38,7 @@ class _GalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AppScaffold(
       extendBodyBehindAppBar: true,
       appBar: NeoAppbar(
         title: 'Галерея',
@@ -65,7 +65,6 @@ class _GalleryScreen extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          const AppBackground(),
           Padding(
             padding: const EdgeInsets.only(
               top: 46,

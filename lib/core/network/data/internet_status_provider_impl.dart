@@ -37,8 +37,7 @@ class InternetStatusProviderImpl implements InternetStatusProvider {
 
   @override
   Future<InternetStatus> checkConnection() async {
-    final lol = await _connectivity.checkConnectivity();
-    final connected = !lol.contains(
+    final connected = !(await _connectivity.checkConnectivity()).contains(
       ConnectivityResult.none,
     );
     final avaliable = await _monitor.isAvaliable();

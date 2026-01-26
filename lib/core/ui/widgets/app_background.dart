@@ -18,6 +18,7 @@ class AppBackground extends StatelessWidget {
           bottom: -25,
           child: SvgPicture.asset(
             'assets/svg/pattern.svg',
+            fit: BoxFit.fill,
           ),
         ),
       ],
